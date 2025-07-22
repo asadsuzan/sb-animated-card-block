@@ -1,19 +1,19 @@
-const Card = () => {
+const Card = ({ card }) => {
 
 
     return <>
 
         <div className="box-wrapper">
             <figure className="shape-box shape-box_half">
-                <img src="https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt="" />
+                <img src={card?.imgUrl} alt="card image" />
                 <div className="brk-abs-overlay z-index-0 bg-black opacity-60"></div>
                 <figcaption>
                     <div className="show-cont">
-                        <h3 className="card-no">01</h3>
-                        <h4 className="card-main-title">Design</h4>
+                        <h3 className="card-no">{card?.cardNo}</h3>
+                        <h4 className="card-main-title">{card.mainTitle}</h4>
                     </div>
-                    <p className="card-content">Customer interactions, study and analysis of company branding through creative briefs. Creation of mock-up designs by using UI tools that simulate actions and pre-visualize the reactions.</p>
-                    <a href="#" className="read-more-btn">Read More</a>
+                    <p className="card-content">{card?.content}</p>
+                    <a href={card?.link.href} target={card?.link?.target} className="read-more-btn">{card?.link.txt}</a>
                 </figcaption>
                 <span className="after"></span>
             </figure>

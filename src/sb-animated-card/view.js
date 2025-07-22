@@ -14,8 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(cards);
         root.render(
             <div>
-
-
                 <Card />
             </div>
 

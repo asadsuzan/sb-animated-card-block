@@ -27,7 +27,17 @@ return array(
 			'cards' => array(
 				'type' => 'array',
 				'default' => array(
-					
+					array(
+						'imgUrl' => 'https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80',
+						'cardNo' => 1,
+						'mainTitle' => 'Design',
+						'content' => 'Customer interactions, study and analysis of company branding through creative briefs. Creation of mock-up designs by using UI tools that simulate actions and pre-visualize the reactions.',
+						'link' => array(
+							'txt' => 'Read More',
+							'href' => '#',
+							'target' => '_self'
+						)
+					)
 				)
 			),
 			'styles' => array(
