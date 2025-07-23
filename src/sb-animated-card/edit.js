@@ -110,6 +110,8 @@ export default function Edit({ attributes, setAttributes }) {
 
 				{/* overlay styles  */}
 				<PanelBody title='Overlay' initialOpen={false}>
+
+					<p>content </p>
 					<PanelColorSettings
 
 						initialOpen={false}
@@ -118,6 +120,20 @@ export default function Edit({ attributes, setAttributes }) {
 								value: styles.shapeBoxHalfBefore.background,
 								onChange: (color) => setAttributes(produce(attributes, draft => {
 									draft.styles.shapeBoxHalfBefore.background = color
+								})),
+								label: 'Background Color',
+							},
+						]}
+					/>
+					<p>Image </p>
+					<PanelColorSettings
+
+						initialOpen={false}
+						colorSettings={[
+							{
+								value: styles.shapeBoxHalfAfter.background,
+								onChange: (color) => setAttributes(produce(attributes, draft => {
+									draft.styles.shapeBoxHalfAfter.background = color
 								})),
 								label: 'Background Color',
 							},
