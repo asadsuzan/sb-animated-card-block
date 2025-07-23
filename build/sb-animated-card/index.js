@@ -1316,6 +1316,7 @@ const Style = ({
   styles
 }) => {
   const {
+    sbWrapper,
     shapeBox,
     shapeBoxHalf,
     shapeBoxHalfBefore,
@@ -1337,8 +1338,15 @@ const Style = ({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("style", {
     dangerouslySetInnerHTML: {
       __html: `
+
+		.sb-wrapper {
+			gap: ${sbWrapper.gap};
+			display: ${sbWrapper.display};
+			grid-template-columns: repeat(${sbWrapper.columns}, minmax(0, 1fr));
+			width: 100%;
+}
         .shape-box {
-	    display: ${shapeBox.display};
+	 
 	    position:  ${shapeBox.position};
 	    z-index:  ${shapeBox.zIndex};
 	    max-width:  ${shapeBox.maxWidth};
@@ -1410,6 +1418,7 @@ const Style = ({
 		color: ${cardNo.color};
 		padding: ${cardNo.padding.top + " " + cardNo.padding.right + " " + cardNo.padding.bottom + " " + cardNo.padding.left};
 		margin: ${cardNo.margin.top + " " + cardNo.margin.right + " " + cardNo.margin.bottom + " " + cardNo.margin.left};
+		font-weight:${cardNo.fontWeight}
 }
 
 .card-main-title {
@@ -1505,7 +1514,7 @@ const Style = ({
   \*****************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/sb-animated-card","version":"0.1.0","title":"animated card block","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false,"align":["center","full","left","right","wide"]},"attributes":{"cards":{"type":"array","default":[{"imgUrl":"https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80","cardNo":"01","mainTitle":"Design","content":"Customer interactions, study and analysis of company branding through creative briefs. Creation of mock-up designs by using UI tools that simulate actions and pre-visualize the reactions.","link":{"txt":"Read More","href":"#","target":"_self"}}]},"styles":{"type":"object","default":{"shapeBox":{"display":"inline-block","position":"relative","zIndex":1,"maxWidth":"500px","height":"430px","margin":{"top":"30px","bottom":"30px","left":"10px","right":"10px"},"boxShadow":" 0 6px 30px 0 rgba(0,0,0, .12)","overflow":"hidden","width":"23.333%","borderRadius":0},"shapeBoxHalf":{"overflow":"hidden","textAlign":"left"},"shapeBoxHalfBefore":{"content":"","position":"absolute","top":0,"left":0,"right":0,"bottom":0,"transform":"skewY(53.5deg)","transformOrigin":"top left","transition":"transform .4s","background":"#fff","zIndex":1},"shapeBoxImg":{"width":"100%","height":"100%","oObjectFit":"cover","objectFit":"cover"},"bgBlack":{"bgColor":"#000"},"ShapeBoxHalfFigCaption":{"position":"absolute","left":0,"right":0,"bottom":0,"padding":{"top":"0","bottom":"30px","left":"30px","right":"30px"},"transition":"transform .4s","transform":"translateY(100%)","zIndex":3},"ShapeBoxHalfFigCaptionShowContent":{"position":"absolute","bottom":"calc(100% + 30px)","left":"30px","right":"30px","transition":"bottom .4s"},"cardNo":{"fontSize":"36px","color":"#ffc107","padding":{"top":"0","bottom":"0","left":"0","right":"0"},"margin":{"top":"10px","bottom":"10px","left":"0","right":"0"}},"cardMainTitle":{"margin":{"top":"8px","bottom":"0","left":"0","right":"0"},"fontWeight":"700","fontSize":"24px","textTransform":"uppercase","color":"#292b2c"},"cardContent":{"color":"#9f9f9f","margin":{"top":"20px","bottom":"0","left":"0","right":"0"},"lineHeight":1.5,"fontSize":"15px","textTransform":"none"},"readMoreBtn":{"border":{"width":"2px","color":"#db3236","style":"solid"},"fontSize":"14px","cursor":"pointer","padding":{"top":"10px","bottom":"10px","left":"20px","right":"20px"},"display":"inline-block","textTransform":"uppercase","letterSpacing":".08em","fontWeight":"600","position":"relative","-webkit-transition":"all 0.3s","-moz-transition":"all 0.3s","transition":"all 0.3s","background":"#db3236","color":"#fff","borderRadius":2,"margin":{"top":"25px","bottom":"0","left":"0","right":"0"},"textDecoration":"none"},"readMoreBtnHover":{"background":"transparent","color":"#db3236"},"shapeBoxHalfAfter":{"position":"absolute","top":0,"left":0,"right":0,"bottom":0,"background":"#fdd744","opacity":0,"transition":"opacity .4s;"},"shapeBoxHalfBeforeHover":{"transform":"skewY(20deg)"},"shapeBoxHalfHoverFigCaption":{"transform":"translateY(0)"},"shapeBoxHalfHoverFigCaptionShowContent":{"bottom":"100%"},"shapeBoxHalfHoverAfter":{"opacity":"1"}}},"options":{"type":"object","default":{}}},"textdomain":"sb-animated-card","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/sb-animated-card","version":"0.1.0","title":"animated card block","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false,"align":["center","full","left","right","wide"]},"attributes":{"cards":{"type":"array","default":[{"imgUrl":"https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80","cardNo":"01","mainTitle":"Design","content":"Customer interactions, study and analysis of company branding through creative briefs. Creation of mock-up designs by using UI tools that simulate actions and pre-visualize the reactions.","link":{"txt":"Read More","href":"#","target":"_self"}},{"imgUrl":"https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80","cardNo":"01","mainTitle":"Design","content":"Customer interactions, study and analysis of company branding through creative briefs. Creation of mock-up designs by using UI tools that simulate actions and pre-visualize the reactions.","link":{"txt":"Read More","href":"#","target":"_self"}},{"imgUrl":"https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80","cardNo":"01","mainTitle":"Design","content":"Customer interactions, study and analysis of company branding through creative briefs. Creation of mock-up designs by using UI tools that simulate actions and pre-visualize the reactions.","link":{"txt":"Read More","href":"#","target":"_self"}},{"imgUrl":"https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80","cardNo":"01","mainTitle":"Design","content":"Customer interactions, study and analysis of company branding through creative briefs. Creation of mock-up designs by using UI tools that simulate actions and pre-visualize the reactions.","link":{"txt":"Read More","href":"#","target":"_self"}}]},"styles":{"type":"object","default":{"sbWrapper":{"gap":"15px","display":"grid","columns":1,"width":"100%"},"shapeBox":{"position":"relative","zIndex":1,"maxWidth":"500px","height":"430px","margin":{"top":"30px","bottom":"30px","left":"10px","right":"10px"},"boxShadow":" 0 6px 30px 0 rgba(0,0,0, .12)","overflow":"hidden","width":"100%","borderRadius":0},"shapeBoxHalf":{"overflow":"hidden","textAlign":"left"},"shapeBoxHalfBefore":{"content":"","position":"absolute","top":0,"left":0,"right":0,"bottom":0,"transform":"skewY(53.5deg)","transformOrigin":"top left","transition":"transform .4s","background":"#fff","zIndex":1},"shapeBoxImg":{"width":"100%","height":"100%","oObjectFit":"cover","objectFit":"cover"},"bgBlack":{"bgColor":"#000"},"ShapeBoxHalfFigCaption":{"position":"absolute","left":0,"right":0,"bottom":0,"padding":{"top":"0","bottom":"30px","left":"30px","right":"30px"},"transition":"transform .4s","transform":"translateY(100%)","zIndex":3},"ShapeBoxHalfFigCaptionShowContent":{"position":"absolute","bottom":"calc(100% + 30px)","left":"30px","right":"30px","transition":"bottom .4s"},"cardNo":{"fontSize":"36px","color":"#ffc107","padding":{"top":"0","bottom":"0","left":"0","right":"0"},"margin":{"top":"10px","bottom":"10px","left":"0","right":"0"},"fontWeight":"500px"},"cardMainTitle":{"margin":{"top":"8px","bottom":"0","left":"0","right":"0"},"fontWeight":"700","fontSize":"24px","textTransform":"uppercase","color":"#292b2c"},"cardContent":{"color":"#9f9f9f","margin":{"top":"20px","bottom":"0","left":"0","right":"0"},"lineHeight":1.5,"fontSize":"15px","textTransform":"none"},"readMoreBtn":{"border":{"width":"2px","color":"#db3236","style":"solid"},"fontSize":"14px","cursor":"pointer","padding":{"top":"10px","bottom":"10px","left":"20px","right":"20px"},"display":"inline-block","textTransform":"uppercase","letterSpacing":".08em","fontWeight":"600","position":"relative","-webkit-transition":"all 0.3s","-moz-transition":"all 0.3s","transition":"all 0.3s","background":"#db3236","color":"#fff","borderRadius":2,"margin":{"top":"25px","bottom":"0","left":"0","right":"0"},"textDecoration":"none"},"readMoreBtnHover":{"background":"transparent","color":"#db3236"},"shapeBoxHalfAfter":{"position":"absolute","top":0,"left":0,"right":0,"bottom":0,"background":"#fdd744","opacity":0,"transition":"opacity .4s;"},"shapeBoxHalfBeforeHover":{"transform":"skewY(20deg)"},"shapeBoxHalfHoverFigCaption":{"transform":"translateY(0)"},"shapeBoxHalfHoverFigCaptionShowContent":{"bottom":"100%"},"shapeBoxHalfHoverAfter":{"opacity":"1"}}},"options":{"type":"object","default":{}}},"textdomain":"sb-animated-card","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
 
 /***/ }),
 
@@ -1892,14 +1901,35 @@ function Edit({
           }]
         })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-      ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(),
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+        title: "Grid Settings",
+        initialOpen: false,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
+          label: "Number of Columns",
+          value: styles.sbWrapper.columns || 1,
+          onChange: column => {
+            setAttributes((0,immer__WEBPACK_IMPORTED_MODULE_3__.produce)(attributes, draft => {
+              draft.styles.sbWrapper.columns = column;
+            }));
+          },
+          min: 1,
+          max: 4
+        })
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+      ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
+        draggable: false
+      }),
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_common_Style__WEBPACK_IMPORTED_MODULE_6__["default"], {
         styles
-      }), cards.map((card, idx) => {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_common_Card__WEBPACK_IMPORTED_MODULE_5__["default"], {
-          card
-        }, idx);
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        className: "sb-wrapper",
+        children: cards.map((card, idx) => {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_common_Card__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            card
+          }, idx);
+        })
       })]
     })]
   });

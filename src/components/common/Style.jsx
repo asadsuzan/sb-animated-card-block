@@ -1,10 +1,17 @@
 const Style = ({ styles }) => {
-	const { shapeBox, shapeBoxHalf, shapeBoxHalfBefore, shapeBoxImg, bgBlack, ShapeBoxHalfFigCaption, ShapeBoxHalfFigCaptionShowContent, cardNo, cardMainTitle, cardContent, readMoreBtn, readMoreBtnHover, shapeBoxHalfAfter, shapeBoxHalfBeforeHover, shapeBoxHalfHoverFigCaption, shapeBoxHalfHoverFigCaptionShowContent, shapeBoxHalfHoverAfter } = styles
+	const { sbWrapper, shapeBox, shapeBoxHalf, shapeBoxHalfBefore, shapeBoxImg, bgBlack, ShapeBoxHalfFigCaption, ShapeBoxHalfFigCaptionShowContent, cardNo, cardMainTitle, cardContent, readMoreBtn, readMoreBtnHover, shapeBoxHalfAfter, shapeBoxHalfBeforeHover, shapeBoxHalfHoverFigCaption, shapeBoxHalfHoverFigCaptionShowContent, shapeBoxHalfHoverAfter } = styles
 
 	return <style dangerouslySetInnerHTML={{
 		__html: `
+
+		.sb-wrapper {
+			gap: ${sbWrapper.gap};
+			display: ${sbWrapper.display};
+			grid-template-columns: repeat(${sbWrapper.columns}, minmax(0, 1fr));
+			width: 100%;
+}
         .shape-box {
-	    display: ${shapeBox.display};
+	 
 	    position:  ${shapeBox.position};
 	    z-index:  ${shapeBox.zIndex};
 	    max-width:  ${shapeBox.maxWidth};
@@ -76,6 +83,7 @@ const Style = ({ styles }) => {
 		color: ${cardNo.color};
 		padding: ${cardNo.padding.top + " " + cardNo.padding.right + " " + cardNo.padding.bottom + " " + cardNo.padding.left};
 		margin: ${cardNo.margin.top + " " + cardNo.margin.right + " " + cardNo.margin.bottom + " " + cardNo.margin.left};
+		font-weight:${cardNo.fontWeight}
 }
 
 .card-main-title {

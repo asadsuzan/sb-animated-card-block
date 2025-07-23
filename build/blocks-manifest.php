@@ -37,14 +37,52 @@ return array(
 							'href' => '#',
 							'target' => '_self'
 						)
+					),
+					array(
+						'imgUrl' => 'https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80',
+						'cardNo' => '01',
+						'mainTitle' => 'Design',
+						'content' => 'Customer interactions, study and analysis of company branding through creative briefs. Creation of mock-up designs by using UI tools that simulate actions and pre-visualize the reactions.',
+						'link' => array(
+							'txt' => 'Read More',
+							'href' => '#',
+							'target' => '_self'
+						)
+					),
+					array(
+						'imgUrl' => 'https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80',
+						'cardNo' => '01',
+						'mainTitle' => 'Design',
+						'content' => 'Customer interactions, study and analysis of company branding through creative briefs. Creation of mock-up designs by using UI tools that simulate actions and pre-visualize the reactions.',
+						'link' => array(
+							'txt' => 'Read More',
+							'href' => '#',
+							'target' => '_self'
+						)
+					),
+					array(
+						'imgUrl' => 'https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80',
+						'cardNo' => '01',
+						'mainTitle' => 'Design',
+						'content' => 'Customer interactions, study and analysis of company branding through creative briefs. Creation of mock-up designs by using UI tools that simulate actions and pre-visualize the reactions.',
+						'link' => array(
+							'txt' => 'Read More',
+							'href' => '#',
+							'target' => '_self'
+						)
 					)
 				)
 			),
 			'styles' => array(
 				'type' => 'object',
 				'default' => array(
+					'sbWrapper' => array(
+						'gap' => '15px',
+						'display' => 'grid',
+						'columns' => 1,
+						'width' => '100%'
+					),
 					'shapeBox' => array(
-						'display' => 'inline-block',
 						'position' => 'relative',
 						'zIndex' => 1,
 						'maxWidth' => '500px',
@@ -57,7 +95,7 @@ return array(
 						),
 						'boxShadow' => ' 0 6px 30px 0 rgba(0,0,0, .12)',
 						'overflow' => 'hidden',
-						'width' => '23.333%',
+						'width' => '100%',
 						'borderRadius' => 0
 					),
 					'shapeBoxHalf' => array(
@@ -122,7 +160,8 @@ return array(
 							'bottom' => '10px',
 							'left' => '0',
 							'right' => '0'
-						)
+						),
+						'fontWeight' => '500px'
 					),
 					'cardMainTitle' => array(
 						'margin' => array(

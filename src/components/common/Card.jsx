@@ -3,8 +3,8 @@ const Card = ({ card }) => {
 
     return <>
 
-        <div className="box-wrapper">
-            <figure className="shape-box shape-box_half">
+        <div className="box-wrapper" >
+            <figure className="shape-box shape-box_half" >
                 <img src={card?.imgUrl} alt="card image" />
                 <div className="brk-abs-overlay z-index-0 bg-black opacity-60"></div>
                 <figcaption>

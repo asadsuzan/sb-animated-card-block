@@ -400,18 +400,38 @@ export default function Edit({ attributes, setAttributes }) {
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<InspectorControls ></InspectorControls>
+			<InspectorControls >
+				<PanelBody title="Grid Settings" initialOpen={false}>
+					<RangeControl
+						label="Number of Columns"
+						value={styles.sbWrapper.columns || 1}
+						onChange={(column) => {
+							setAttributes(produce(attributes, draft => {
+								draft.styles.sbWrapper.columns = column
+							}))
+						}}
+						min={1}
+						max={4}
+					/>
+				</PanelBody>
+			</InspectorControls>
 
 
 
 
-			<div {...useBlockProps()}>
+			<div {...useBlockProps({
+				draggable: false
+			})}>
 				<Style {...{ styles }} />
-				{
-					cards.map((card, idx) => {
-						return <Card key={idx} {...{ card }} />
-					})
-				}
+
+				<div className='sb-wrapper'>
+					{
+						cards.map((card, idx) => {
+							return <Card key={idx} {...{ card }} />
+						})
+					}
+				</div>
+
 
 			</div>
 		</>
