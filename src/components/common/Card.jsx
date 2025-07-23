@@ -1,9 +1,12 @@
-const Card = ({ card }) => {
+import { produce } from 'immer'
+const Card = ({ card, isBackend = false, options, setAttributes, attributes, idx }) => {
 
-
+    const { selectedCardIdx } = options || {}
     return <>
 
-        <div className="box-wrapper" >
+        <div className="box-wrapper" onClick={() => setAttributes(produce(attributes, draft => {
+            draft.options.selectedCardIdx = idx
+        }))}>
             <figure className="shape-box shape-box_half" >
                 <img src={card?.imgUrl} alt="card image" />
                 <div className="brk-abs-overlay z-index-0 bg-black opacity-60"></div>

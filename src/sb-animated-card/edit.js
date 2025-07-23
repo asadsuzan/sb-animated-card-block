@@ -1,13 +1,14 @@
 
 import { __ } from '@wordpress/i18n';
 
-import { InspectorControls, useBlockProps, AlignmentControl, PanelColorSettings } from '@wordpress/block-editor';
+import { InspectorControls, useBlockProps, AlignmentControl, PanelColorSettings, MediaUpload } from '@wordpress/block-editor';
 import {
 	PanelBody, __experimentalUnitControl as UnitControl,
 	__experimentalBoxControl as BoxControl, Flex, FlexItem,
 	RangeControl,
 	FontSizePicker,
-	SelectControl, BorderControl
+	SelectControl, BorderControl,
+	Button
 
 } from '@wordpress/components';
 import { produce } from 'immer'
@@ -21,8 +22,8 @@ import Style from '../components/common/Style';
 
 
 export default function Edit({ attributes, setAttributes }) {
-	const { cards, styles } = attributes
-
+	const { cards, styles, options } = attributes
+	console.log(options);
 	const FONT_SIZES = [
 		{ name: __('Small'), slug: 'small', size: 12 },
 		{ name: __('Normal'), slug: 'normal', size: 16 },
@@ -49,6 +50,33 @@ export default function Edit({ attributes, setAttributes }) {
 		{ label: 'Lowercase', value: 'lowercase' },
 		{ label: 'Capitalize', value: 'capitalize' },
 	]
+
+	// handle add card 
+	const handleAddCard = () => {
+		setAttributes(produce(attributes, draft => {
+			draft.cards.push({
+				"imgUrl": "https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+				"cardNo": "01",
+				"mainTitle": "Design",
+				"content": "Customer interactions, study and analysis of company branding through creative briefs. Creation of mock-up designs by using UI tools that simulate actions and pre-visualize the reactions.",
+				"link": {
+					"txt": "Read More",
+					"href": "#",
+					"target": "_self"
+				}
+			})
+		}))
+	}
+
+	// handle delete card 
+
+	const handleDeleCard = () => {
+		if (cards.length > 1) {
+			setAttributes(produce(attributes, draft => {
+				draft.cards.splice(options.selectedCardIdx, 1)
+			}))
+		}
+	}
 	return (
 		<>
 			{/* <StyleSettings {...{ attributes, setAttributes }} />
@@ -401,6 +429,7 @@ export default function Edit({ attributes, setAttributes }) {
 				</PanelBody>
 			</InspectorControls>
 			<InspectorControls >
+				{/* grid settings  */}
 				<PanelBody title="Grid Settings" initialOpen={false}>
 					<RangeControl
 						label="Number of Columns"
@@ -413,6 +442,44 @@ export default function Edit({ attributes, setAttributes }) {
 						min={1}
 						max={4}
 					/>
+				</PanelBody>
+
+				{/* <PanelBody title="Image" initialOpen={false}>
+					<MediaUpload
+						onSelect={(media) => {
+							handleAvatarUrl(media.url)
+						}}
+						multiple={false}
+						render={({ open }) => (
+							<div style={{
+								display: "flex",
+								flexDirection: "column",
+								alignItems: "center",
+								gap: "5px"
+							}}>
+								<img height={"50px"} width={"100px"} alt='user' src={profile.imgUrl} />
+								<Button style={{
+									textAlign: "Center"
+								}} variant='primary' icon={"upload"} size='small' onClick={open}>
+									upload
+								</Button>
+								<span>Or</span>
+								<TextControl label="add url" value={profile?.imgUrl} onChange={(newUrl) => handleAvatarUrl(newUrl)} />
+
+							</div>
+						)}
+					/>
+				</PanelBody> */}
+				<PanelBody title='Card Item'>
+					<div style={{
+						display: "flex",
+						justifyContent: "space-between"
+					}}>
+						<Button variant='primary' onClick={handleAddCard}>Add Card</Button>
+						{
+							cards?.length > 1 && <Button variant='secondary' onClick={handleDeleCard}>Remove Card</Button>
+						}
+					</div>
 				</PanelBody>
 			</InspectorControls>
 
@@ -427,7 +494,7 @@ export default function Edit({ attributes, setAttributes }) {
 				<div className='sb-wrapper'>
 					{
 						cards.map((card, idx) => {
-							return <Card key={idx} {...{ card }} />
+							return <Card key={idx} {...{ card, options, attributes, setAttributes, idx }} />
 						})
 					}
 				</div>
