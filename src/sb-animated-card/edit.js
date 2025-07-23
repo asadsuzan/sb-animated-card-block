@@ -7,7 +7,7 @@ import {
 	__experimentalBoxControl as BoxControl, Flex, FlexItem,
 	RangeControl,
 	FontSizePicker,
-	SelectControl
+	SelectControl, BorderControl
 
 } from '@wordpress/components';
 import { produce } from 'immer'
@@ -127,7 +127,9 @@ export default function Edit({ attributes, setAttributes }) {
 
 				</PanelBody>
 
-				<PanelBody title='Typography'>
+				{/* Typography */}
+
+				<PanelBody title='Typography' initialOpen={false}>
 					<PanelBody title='Heading'>
 						{/* font size  */}
 						<FontSizePicker fontSizes={FONT_SIZES}
@@ -248,6 +250,125 @@ export default function Edit({ attributes, setAttributes }) {
 						/>
 					</PanelBody>
 
+				</PanelBody>
+
+
+				{/* button styles  */}
+				<PanelBody title='Button' initialOpen={false}>
+					{/* font size  */}
+					<FontSizePicker fontSizes={FONT_SIZES}
+
+						value={styles.readMoreBtn.fontSize}
+
+						onChange={(size) => setAttributes(produce(attributes, draft => {
+							draft.styles.readMoreBtn.fontSize = size
+						}))}
+
+					/>
+					{/* font weight  */}
+					<SelectControl
+						label="Font Weight"
+						value={styles.readMoreBtn.fontWeight || 'normal'}
+						options={FONT_WEIGHTS}
+						onChange={(value) => setAttributes(produce(attributes, draft => {
+							draft.styles.readMoreBtn.fontWeight = value
+						}))}
+					/>
+					{/* text transform  */}
+					<SelectControl
+						label="Text Transform"
+						value={styles.readMoreBtn.textTransform || 'none'}
+						options={TEXT_TRANSFORMS}
+						onChange={(value) => setAttributes(produce(attributes, draft => {
+							draft.styles.readMoreBtn.textTransform = value
+						}))}
+					/>
+					{/* padding  */}
+					<BoxControl label='Padding' values={styles.readMoreBtn.padding} onChange={(padding) => {
+						setAttributes(produce(attributes, draft => {
+							draft.styles.readMoreBtn.padding = padding
+						}))
+					}} />
+					{/* border radius  */}
+					<RangeControl
+						label="Border Radius"
+						value={styles.readMoreBtn.borderRadius || 0}
+						min={0}
+						max={100}
+						step={1}
+						onChange={(radius) => {
+							setAttributes(produce(attributes, draft => {
+								draft.styles.readMoreBtn.borderRadius = radius
+							}))
+						}}
+					/>
+					{/* border  */}
+					<BorderControl
+						label="styles"
+						value={styles.readMoreBtn.border}
+						onChange={(borderStyle) => setAttributes(produce(attributes, draft => {
+							draft.styles.readMoreBtn.border = borderStyle
+						}))}
+					/>
+					{/* background  */}
+					<PanelColorSettings
+
+						initialOpen={false}
+						colorSettings={[
+							{
+								value: styles.readMoreBtn.background,
+								onChange: (color) => setAttributes(produce(attributes, draft => {
+									draft.styles.readMoreBtn.background = color
+								})),
+								label: 'Background Color',
+							},
+						]}
+					/>
+					{/* text color  */}
+					<PanelColorSettings
+
+						initialOpen={false}
+						colorSettings={[
+							{
+								value: styles.readMoreBtn.color,
+								onChange: (color) => setAttributes(produce(attributes, draft => {
+									draft.styles.readMoreBtn.color = color
+								})),
+								label: 'Text  Color',
+							},
+						]}
+					/>
+
+					{/* on hover  */}
+					<p>On Hover</p>
+					{/* background  */}
+					<PanelColorSettings
+
+						initialOpen={false}
+						colorSettings={[
+							{
+								value: styles.readMoreBtnHover.background,
+								onChange: (color) => setAttributes(produce(attributes, draft => {
+									draft.styles.readMoreBtnHover.background = color
+								})),
+								label: 'Background Color',
+							},
+						]}
+					/>
+					{/* text color  */}
+					<PanelColorSettings
+
+						initialOpen={false}
+						colorSettings={[
+							{
+								value: styles.readMoreBtnHover.color,
+								onChange: (color) => setAttributes(produce(attributes, draft => {
+									draft.styles.readMoreBtnHover.color = color
+								})),
+								label: 'Text  Color',
+							},
+						]}
+					/>
 				</PanelBody>
 			</InspectorControls>
 			<InspectorControls ></InspectorControls>

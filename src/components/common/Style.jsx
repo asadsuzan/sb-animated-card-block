@@ -111,7 +111,7 @@ const Style = ({ styles }) => {
 	transition:${readMoreBtn.transition};
 	background: ${readMoreBtn.background};
 	color: ${readMoreBtn.color};
-	border-radius: ${readMoreBtn.borderRadius};
+	border-radius: ${readMoreBtn.borderRadius}px;
 	 margin: ${readMoreBtn.margin.top + " " + readMoreBtn.margin.right + " " + readMoreBtn.margin.bottom + " " + readMoreBtn.margin.left};
 	text-decoration: ${readMoreBtn.textDecoration};
 }

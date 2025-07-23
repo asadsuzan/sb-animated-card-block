@@ -171,7 +171,7 @@ return array(
 						'transition' => 'all 0.3s',
 						'background' => '#db3236',
 						'color' => '#fff',
-						'borderRadius' => '2px',
+						'borderRadius' => 2,
 						'margin' => array(
 							'top' => '25px',
 							'bottom' => '0',

@@ -1445,7 +1445,7 @@ const Style = ({
 	transition:${readMoreBtn.transition};
 	background: ${readMoreBtn.background};
 	color: ${readMoreBtn.color};
-	border-radius: ${readMoreBtn.borderRadius};
+	border-radius: ${readMoreBtn.borderRadius}px;
 	 margin: ${readMoreBtn.margin.top + " " + readMoreBtn.margin.right + " " + readMoreBtn.margin.bottom + " " + readMoreBtn.margin.left};
 	text-decoration: ${readMoreBtn.textDecoration};
 }
@@ -1504,7 +1504,7 @@ const Style = ({
   \*****************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/sb-animated-card","version":"0.1.0","title":"animated card block","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false,"align":["center","full","left","right","wide"]},"attributes":{"cards":{"type":"array","default":[{"imgUrl":"https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80","cardNo":"01","mainTitle":"Design","content":"Customer interactions, study and analysis of company branding through creative briefs. Creation of mock-up designs by using UI tools that simulate actions and pre-visualize the reactions.","link":{"txt":"Read More","href":"#","target":"_self"}}]},"styles":{"type":"object","default":{"shapeBox":{"display":"inline-block","position":"relative","zIndex":1,"maxWidth":"500px","height":"430px","margin":{"top":"30px","bottom":"30px","left":"10px","right":"10px"},"boxShadow":" 0 6px 30px 0 rgba(0,0,0, .12)","overflow":"hidden","width":"23.333%"},"shapeBoxHalf":{"overflow":"hidden","textAlign":"left"},"shapeBoxHalfBefore":{"content":"","position":"absolute","top":0,"left":0,"right":0,"bottom":0,"transform":"skewY(53.5deg)","transformOrigin":"top left","transition":"transform .4s","background":"#fff","zIndex":1},"shapeBoxImg":{"width":"100%","height":"100%","oObjectFit":"cover","objectFit":"cover"},"bgBlack":{"bgColor":"#000"},"ShapeBoxHalfFigCaption":{"position":"absolute","left":0,"right":0,"bottom":0,"padding":{"top":"0","bottom":"30px","left":"30px","right":"30px"},"transition":"transform .4s","transform":"translateY(100%)","zIndex":3},"ShapeBoxHalfFigCaptionShowContent":{"position":"absolute","bottom":"calc(100% + 30px)","left":"30px","right":"30px","transition":"bottom .4s"},"cardNo":{"fontSize":"36px","color":"#ffc107","padding":{"top":"0","bottom":"0","left":"0","right":"0"},"margin":{"top":"10px","bottom":"10px","left":"0","right":"0"}},"cardMainTitle":{"margin":{"top":"8px","bottom":"0","left":"0","right":"0"},"fontWeight":"700","fontSize":"24px","textTransform":"uppercase","color":"#292b2c"},"cardContent":{"color":"#9f9f9f","margin":{"top":"20px","bottom":"0","left":"0","right":"0"},"lineHeight":1.5,"fontSize":"15px","textTransform":"none"},"readMoreBtn":{"border":{"width":"2px","color":"#db3236","style":"solid"},"fontSize":"14px","cursor":"pointer","padding":{"top":"10px","bottom":"10px","left":"20px","right":"20px"},"display":"inline-block","textTransform":"uppercase","letterSpacing":".08em","fontWeight":"600","position":"relative","-webkit-transition":"all 0.3s","-moz-transition":"all 0.3s","transition":"all 0.3s","background":"#db3236","color":"#fff","borderRadius":"2px","margin":{"top":"25px","bottom":"0","left":"0","right":"0"},"textDecoration":"none"},"readMoreBtnHover":{"background":"transparent","color":"#db3236"},"shapeBoxHalfAfter":{"position":"absolute","top":0,"left":0,"right":0,"bottom":0,"background":"#fdd744","opacity":0,"transition":"opacity .4s;"},"shapeBoxHalfBeforeHover":{"transform":"skewY(20deg)"},"shapeBoxHalfHoverFigCaption":{"transform":"translateY(0)"},"shapeBoxHalfHoverFigCaptionShowContent":{"bottom":"100%"},"shapeBoxHalfHoverAfter":{"opacity":"1"}}},"options":{"type":"object","default":{}}},"textdomain":"sb-animated-card","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/sb-animated-card","version":"0.1.0","title":"animated card block","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false,"align":["center","full","left","right","wide"]},"attributes":{"cards":{"type":"array","default":[{"imgUrl":"https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80","cardNo":"01","mainTitle":"Design","content":"Customer interactions, study and analysis of company branding through creative briefs. Creation of mock-up designs by using UI tools that simulate actions and pre-visualize the reactions.","link":{"txt":"Read More","href":"#","target":"_self"}}]},"styles":{"type":"object","default":{"shapeBox":{"display":"inline-block","position":"relative","zIndex":1,"maxWidth":"500px","height":"430px","margin":{"top":"30px","bottom":"30px","left":"10px","right":"10px"},"boxShadow":" 0 6px 30px 0 rgba(0,0,0, .12)","overflow":"hidden","width":"23.333%"},"shapeBoxHalf":{"overflow":"hidden","textAlign":"left"},"shapeBoxHalfBefore":{"content":"","position":"absolute","top":0,"left":0,"right":0,"bottom":0,"transform":"skewY(53.5deg)","transformOrigin":"top left","transition":"transform .4s","background":"#fff","zIndex":1},"shapeBoxImg":{"width":"100%","height":"100%","oObjectFit":"cover","objectFit":"cover"},"bgBlack":{"bgColor":"#000"},"ShapeBoxHalfFigCaption":{"position":"absolute","left":0,"right":0,"bottom":0,"padding":{"top":"0","bottom":"30px","left":"30px","right":"30px"},"transition":"transform .4s","transform":"translateY(100%)","zIndex":3},"ShapeBoxHalfFigCaptionShowContent":{"position":"absolute","bottom":"calc(100% + 30px)","left":"30px","right":"30px","transition":"bottom .4s"},"cardNo":{"fontSize":"36px","color":"#ffc107","padding":{"top":"0","bottom":"0","left":"0","right":"0"},"margin":{"top":"10px","bottom":"10px","left":"0","right":"0"}},"cardMainTitle":{"margin":{"top":"8px","bottom":"0","left":"0","right":"0"},"fontWeight":"700","fontSize":"24px","textTransform":"uppercase","color":"#292b2c"},"cardContent":{"color":"#9f9f9f","margin":{"top":"20px","bottom":"0","left":"0","right":"0"},"lineHeight":1.5,"fontSize":"15px","textTransform":"none"},"readMoreBtn":{"border":{"width":"2px","color":"#db3236","style":"solid"},"fontSize":"14px","cursor":"pointer","padding":{"top":"10px","bottom":"10px","left":"20px","right":"20px"},"display":"inline-block","textTransform":"uppercase","letterSpacing":".08em","fontWeight":"600","position":"relative","-webkit-transition":"all 0.3s","-moz-transition":"all 0.3s","transition":"all 0.3s","background":"#db3236","color":"#fff","borderRadius":2,"margin":{"top":"25px","bottom":"0","left":"0","right":"0"},"textDecoration":"none"},"readMoreBtnHover":{"background":"transparent","color":"#db3236"},"shapeBoxHalfAfter":{"position":"absolute","top":0,"left":0,"right":0,"bottom":0,"background":"#fdd744","opacity":0,"transition":"opacity .4s;"},"shapeBoxHalfBeforeHover":{"transform":"skewY(20deg)"},"shapeBoxHalfHoverFigCaption":{"transform":"translateY(0)"},"shapeBoxHalfHoverFigCaptionShowContent":{"bottom":"100%"},"shapeBoxHalfHoverAfter":{"opacity":"1"}}},"options":{"type":"object","default":{}}},"textdomain":"sb-animated-card","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
 
 /***/ }),
 
@@ -1693,6 +1693,7 @@ function Edit({
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
         title: "Typography",
+        initialOpen: false,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
           title: "Heading",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
@@ -1777,6 +1778,93 @@ function Edit({
               draft.styles.cardContent.textTransform = value;
             }))
           })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+        title: "Button",
+        initialOpen: false,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
+          fontSizes: FONT_SIZES,
+          value: styles.readMoreBtn.fontSize,
+          onChange: size => setAttributes((0,immer__WEBPACK_IMPORTED_MODULE_3__.produce)(attributes, draft => {
+            draft.styles.readMoreBtn.fontSize = size;
+          }))
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+          label: "Font Weight",
+          value: styles.readMoreBtn.fontWeight || 'normal',
+          options: FONT_WEIGHTS,
+          onChange: value => setAttributes((0,immer__WEBPACK_IMPORTED_MODULE_3__.produce)(attributes, draft => {
+            draft.styles.readMoreBtn.fontWeight = value;
+          }))
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+          label: "Text Transform",
+          value: styles.readMoreBtn.textTransform || 'none',
+          options: TEXT_TRANSFORMS,
+          onChange: value => setAttributes((0,immer__WEBPACK_IMPORTED_MODULE_3__.produce)(attributes, draft => {
+            draft.styles.readMoreBtn.textTransform = value;
+          }))
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalBoxControl, {
+          label: "Padding",
+          values: styles.readMoreBtn.padding,
+          onChange: padding => {
+            setAttributes((0,immer__WEBPACK_IMPORTED_MODULE_3__.produce)(attributes, draft => {
+              draft.styles.readMoreBtn.padding = padding;
+            }));
+          }
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
+          label: "Border Radius",
+          value: styles.readMoreBtn.borderRadius || 0,
+          min: 0,
+          max: 100,
+          step: 1,
+          onChange: radius => {
+            setAttributes((0,immer__WEBPACK_IMPORTED_MODULE_3__.produce)(attributes, draft => {
+              draft.styles.readMoreBtn.borderRadius = radius;
+            }));
+          }
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.BorderControl, {
+          label: "styles",
+          value: styles.readMoreBtn.border,
+          onChange: borderStyle => setAttributes((0,immer__WEBPACK_IMPORTED_MODULE_3__.produce)(attributes, draft => {
+            draft.styles.readMoreBtn.border = borderStyle;
+          }))
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.PanelColorSettings, {
+          initialOpen: false,
+          colorSettings: [{
+            value: styles.readMoreBtn.background,
+            onChange: color => setAttributes((0,immer__WEBPACK_IMPORTED_MODULE_3__.produce)(attributes, draft => {
+              draft.styles.readMoreBtn.background = color;
+            })),
+            label: 'Background Color'
+          }]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.PanelColorSettings, {
+          initialOpen: false,
+          colorSettings: [{
+            value: styles.readMoreBtn.color,
+            onChange: color => setAttributes((0,immer__WEBPACK_IMPORTED_MODULE_3__.produce)(attributes, draft => {
+              draft.styles.readMoreBtn.color = color;
+            })),
+            label: 'Text  Color'
+          }]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+          children: "On Hover"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.PanelColorSettings, {
+          initialOpen: false,
+          colorSettings: [{
+            value: styles.readMoreBtnHover.background,
+            onChange: color => setAttributes((0,immer__WEBPACK_IMPORTED_MODULE_3__.produce)(attributes, draft => {
+              draft.styles.readMoreBtnHover.background = color;
+            })),
+            label: 'Background Color'
+          }]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.PanelColorSettings, {
+          initialOpen: false,
+          colorSettings: [{
+            value: styles.readMoreBtnHover.color,
+            onChange: color => setAttributes((0,immer__WEBPACK_IMPORTED_MODULE_3__.produce)(attributes, draft => {
+              draft.styles.readMoreBtnHover.color = color;
+            })),
+            label: 'Text  Color'
+          }]
         })]
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
