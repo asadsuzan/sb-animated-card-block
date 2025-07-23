@@ -52,7 +52,12 @@ export default function Edit({ attributes, setAttributes }) {
 		{ label: 'Lowercase', value: 'lowercase' },
 		{ label: 'Capitalize', value: 'capitalize' },
 	]
-
+	const LINK_TARGET = [
+		{ label: "_Blank", value: "_blank" },
+		{ label: "_Parent", value: "_parent" },
+		{ label: "_Self", value: "_self" },
+		{ label: "_Top", value: "_top" },
+	]
 	// handle add card 
 	const handleAddCard = () => {
 		setAttributes(produce(attributes, draft => {
@@ -113,10 +118,23 @@ export default function Edit({ attributes, setAttributes }) {
 		}))
 
 	}
+
+	//  handle handleLinkTxt
+	const handleLinkTxt = (txt) => {
+		setAttributes(produce(attributes, draft => {
+			draft.cards[options.selectedCardIdx].link.txt = txt
+		}))
+	}
+
+	//  handle href 
+	const handleLinkHref = (href) => {
+		setAttributes(produce(attributes, draft => {
+			draft.cards[options.selectedCardIdx].link.href = href
+		}))
+	}
 	return (
 		<>
-			{/* <StyleSettings {...{ attributes, setAttributes }} />
-			<GeneralSettings {...{ attributes, setAttributes }} /> */}
+
 
 
 			<InspectorControls group='styles'>
@@ -514,7 +532,20 @@ export default function Edit({ attributes, setAttributes }) {
 
 					<TextareaControl label="content" value={cards[options.selectedCardIdx]?.content} onChange={handleContentChange} />
 
+					<PanelBody title='Link'>
+						<TextControl label="Text" value={cards[options.selectedCardIdx]?.link.txt} onChange={handleLinkTxt} />
+						<TextControl label="Href" value={cards[options.selectedCardIdx]?.link.href} onChange={handleLinkHref} />
 
+						<SelectControl
+							label="Target"
+							value={cards[options?.selectedCardIdx].link.target}
+							options={LINK_TARGET}
+							onChange={(value) => setAttributes(produce(attributes, draft => {
+								draft.cards[options?.selectedCardIdx].link.target = value
+							}))}
+						/>
+
+					</PanelBody>
 
 					{/* add and remove card item  */}
 					<div style={{
@@ -540,7 +571,7 @@ export default function Edit({ attributes, setAttributes }) {
 				<div className='sb-wrapper'>
 					{
 						cards.map((card, idx) => {
-							return <Card key={idx} {...{ card, options, attributes, setAttributes, idx }} />
+							return <Card key={idx} {...{ card, options, attributes, setAttributes, idx, isBackend: true }} />
 						})
 					}
 				</div>

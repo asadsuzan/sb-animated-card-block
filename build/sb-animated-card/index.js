@@ -1269,12 +1269,19 @@ const Card = ({
   const {
     selectedCardIdx
   } = options || {};
+  const handleSelectedCard = () => {
+    if (isBackend) {
+      setAttributes((0,immer__WEBPACK_IMPORTED_MODULE_0__.produce)(attributes, draft => {
+        draft.options.selectedCardIdx = idx;
+      }));
+    } else {
+      return;
+    }
+  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "box-wrapper",
-      onClick: () => setAttributes((0,immer__WEBPACK_IMPORTED_MODULE_0__.produce)(attributes, draft => {
-        draft.options.selectedCardIdx = idx;
-      })),
+      onClick: handleSelectedCard,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("figure", {
         className: "shape-box shape-box_half",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
@@ -1368,7 +1375,8 @@ const Style = ({
 	    box-shadow:  ${shapeBox.boxShadow};
 	    overflow:  ${shapeBox.overflow};
 	    width:  ${shapeBox.width};
-		border-radius:${shapeBox.borderRadius}px
+		border-radius:${shapeBox.borderRadius}px;
+		background-color:red
 }
         
         .shape-box_half {
@@ -1527,7 +1535,7 @@ const Style = ({
   \*****************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/sb-animated-card","version":"0.1.0","title":"animated card block","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false,"align":["center","full","left","right","wide"]},"attributes":{"cards":{"type":"array","default":[{"imgUrl":"https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80","cardNo":"01","mainTitle":"Design","content":"Customer interactions, study and analysis of company branding through creative briefs. Creation of mock-up designs by using UI tools that simulate actions and pre-visualize the reactions.","link":{"txt":"Read More","href":"#","target":"_self"}}]},"styles":{"type":"object","default":{"sbWrapper":{"gap":"15px","display":"grid","columns":1,"width":"100%"},"shapeBox":{"position":"relative","zIndex":1,"maxWidth":"500px","height":"430px","margin":{"top":"30px","bottom":"30px","left":"10px","right":"10px"},"boxShadow":" 0 6px 30px 0 rgba(0,0,0, .12)","overflow":"hidden","width":"100%","borderRadius":0},"shapeBoxHalf":{"overflow":"hidden","textAlign":"left"},"shapeBoxHalfBefore":{"content":"","position":"absolute","top":0,"left":0,"right":0,"bottom":0,"transform":"skewY(53.5deg)","transformOrigin":"top left","transition":"transform .4s","background":"#fff","zIndex":1},"shapeBoxImg":{"width":"100%","height":"100%","oObjectFit":"cover","objectFit":"cover"},"bgBlack":{"bgColor":"#000"},"ShapeBoxHalfFigCaption":{"position":"absolute","left":0,"right":0,"bottom":0,"padding":{"top":"0","bottom":"30px","left":"30px","right":"30px"},"transition":"transform .4s","transform":"translateY(100%)","zIndex":3},"ShapeBoxHalfFigCaptionShowContent":{"position":"absolute","bottom":"calc(100% + 30px)","left":"30px","right":"30px","transition":"bottom .4s"},"cardNo":{"fontSize":"36px","color":"#ffc107","padding":{"top":"0","bottom":"0","left":"0","right":"0"},"margin":{"top":"10px","bottom":"10px","left":"0","right":"0"},"fontWeight":"500px"},"cardMainTitle":{"margin":{"top":"8px","bottom":"0","left":"0","right":"0"},"fontWeight":"700","fontSize":"24px","textTransform":"uppercase","color":"#292b2c"},"cardContent":{"color":"#9f9f9f","margin":{"top":"20px","bottom":"0","left":"0","right":"0"},"lineHeight":1.5,"fontSize":"15px","textTransform":"none"},"readMoreBtn":{"border":{"width":"2px","color":"#db3236","style":"solid"},"fontSize":"14px","cursor":"pointer","padding":{"top":"10px","bottom":"10px","left":"20px","right":"20px"},"display":"inline-block","textTransform":"uppercase","letterSpacing":".08em","fontWeight":"600","position":"relative","-webkit-transition":"all 0.3s","-moz-transition":"all 0.3s","transition":"all 0.3s","background":"#db3236","color":"#fff","borderRadius":2,"margin":{"top":"25px","bottom":"0","left":"0","right":"0"},"textDecoration":"none"},"readMoreBtnHover":{"background":"transparent","color":"#db3236"},"shapeBoxHalfAfter":{"position":"absolute","top":0,"left":0,"right":0,"bottom":0,"background":"#fdd744","opacity":0,"transition":"opacity .4s;"},"shapeBoxHalfBeforeHover":{"transform":"skewY(20deg)"},"shapeBoxHalfHoverFigCaption":{"transform":"translateY(0)"},"shapeBoxHalfHoverFigCaptionShowContent":{"bottom":"100%"},"shapeBoxHalfHoverAfter":{"opacity":"1"}}},"options":{"type":"object","default":{"selectedCardIdx":0}}},"textdomain":"sb-animated-card","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/sb-animated-card","version":"0.1.0","title":"animated card block","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false,"align":["center","full","left","right","wide"]},"attributes":{"cards":{"type":"array","default":[{"imgUrl":"https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80","cardNo":"01","mainTitle":"Design","content":"Customer interactions, study and analysis of company branding through creative briefs. Creation of mock-up designs by using UI tools that simulate actions and pre-visualize the reactions.","link":{"txt":"Read More","href":"#","target":"_self"}}]},"styles":{"type":"object","default":{"sbWrapper":{"gap":"15px","display":"grid","columns":1,"width":"100%"},"shapeBox":{"position":"relative","zIndex":1,"maxWidth":"500px","height":"430px","margin":{"top":"30px","bottom":"30px","left":"10px","right":"10px"},"boxShadow":" 0 6px 30px 0 rgba(0,0,0, .12)","overflow":"hidden","width":"100%","borderRadius":0,"background":"red"},"shapeBoxHalf":{"overflow":"hidden","textAlign":"left"},"shapeBoxHalfBefore":{"content":"","position":"absolute","top":0,"left":0,"right":0,"bottom":0,"transform":"skewY(53.5deg)","transformOrigin":"top left","transition":"transform .4s","background":"#fff","zIndex":1},"shapeBoxImg":{"width":"100%","height":"100%","oObjectFit":"cover","objectFit":"cover"},"bgBlack":{"bgColor":"#000"},"ShapeBoxHalfFigCaption":{"position":"absolute","left":0,"right":0,"bottom":0,"padding":{"top":"0","bottom":"30px","left":"30px","right":"30px"},"transition":"transform .4s","transform":"translateY(100%)","zIndex":3},"ShapeBoxHalfFigCaptionShowContent":{"position":"absolute","bottom":"calc(100% + 30px)","left":"30px","right":"30px","transition":"bottom .4s"},"cardNo":{"fontSize":"36px","color":"#ffc107","padding":{"top":"0","bottom":"0","left":"0","right":"0"},"margin":{"top":"10px","bottom":"10px","left":"0","right":"0"},"fontWeight":"500px"},"cardMainTitle":{"margin":{"top":"8px","bottom":"0","left":"0","right":"0"},"fontWeight":"700","fontSize":"24px","textTransform":"uppercase","color":"#292b2c"},"cardContent":{"color":"#9f9f9f","margin":{"top":"20px","bottom":"0","left":"0","right":"0"},"lineHeight":1.5,"fontSize":"15px","textTransform":"none"},"readMoreBtn":{"border":{"width":"2px","color":"#db3236","style":"solid"},"fontSize":"14px","cursor":"pointer","padding":{"top":"10px","bottom":"10px","left":"20px","right":"20px"},"display":"inline-block","textTransform":"uppercase","letterSpacing":".08em","fontWeight":"600","position":"relative","-webkit-transition":"all 0.3s","-moz-transition":"all 0.3s","transition":"all 0.3s","background":"#db3236","color":"#fff","borderRadius":2,"margin":{"top":"25px","bottom":"0","left":"0","right":"0"},"textDecoration":"none"},"readMoreBtnHover":{"background":"transparent","color":"#db3236"},"shapeBoxHalfAfter":{"position":"absolute","top":0,"left":0,"right":0,"bottom":0,"background":"#fdd744","opacity":0,"transition":"opacity .4s;"},"shapeBoxHalfBeforeHover":{"transform":"skewY(20deg)"},"shapeBoxHalfHoverFigCaption":{"transform":"translateY(0)"},"shapeBoxHalfHoverFigCaptionShowContent":{"bottom":"100%"},"shapeBoxHalfHoverAfter":{"opacity":"1"}}},"options":{"type":"object","default":{"selectedCardIdx":0}}},"textdomain":"sb-animated-card","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
 
 /***/ }),
 
@@ -1642,7 +1650,19 @@ function Edit({
     label: 'Capitalize',
     value: 'capitalize'
   }];
-
+  const LINK_TARGET = [{
+    label: "_Blank",
+    value: "_blank"
+  }, {
+    label: "_Parent",
+    value: "_parent"
+  }, {
+    label: "_Self",
+    value: "_self"
+  }, {
+    label: "_Top",
+    value: "_top"
+  }];
   // handle add card 
   const handleAddCard = () => {
     setAttributes((0,immer__WEBPACK_IMPORTED_MODULE_3__.produce)(attributes, draft => {
@@ -1693,6 +1713,20 @@ function Edit({
   const handleContentChange = content => {
     setAttributes((0,immer__WEBPACK_IMPORTED_MODULE_3__.produce)(attributes, draft => {
       draft.cards[options.selectedCardIdx].content = content;
+    }));
+  };
+
+  //  handle handleLinkTxt
+  const handleLinkTxt = txt => {
+    setAttributes((0,immer__WEBPACK_IMPORTED_MODULE_3__.produce)(attributes, draft => {
+      draft.cards[options.selectedCardIdx].link.txt = txt;
+    }));
+  };
+
+  //  handle href 
+  const handleLinkHref = href => {
+    setAttributes((0,immer__WEBPACK_IMPORTED_MODULE_3__.produce)(attributes, draft => {
+      draft.cards[options.selectedCardIdx].link.href = href;
     }));
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
@@ -2034,6 +2068,24 @@ function Edit({
           label: "content",
           value: cards[options.selectedCardIdx]?.content,
           onChange: handleContentChange
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+          title: "Link",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+            label: "Text",
+            value: cards[options.selectedCardIdx]?.link.txt,
+            onChange: handleLinkTxt
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+            label: "Href",
+            value: cards[options.selectedCardIdx]?.link.href,
+            onChange: handleLinkHref
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+            label: "Target",
+            value: cards[options?.selectedCardIdx].link.target,
+            options: LINK_TARGET,
+            onChange: value => setAttributes((0,immer__WEBPACK_IMPORTED_MODULE_3__.produce)(attributes, draft => {
+              draft.cards[options?.selectedCardIdx].link.target = value;
+            }))
+          })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
           style: {
             display: "flex",
@@ -2064,7 +2116,8 @@ function Edit({
             options,
             attributes,
             setAttributes,
-            idx
+            idx,
+            isBackend: true
           }, idx);
         })
       })]

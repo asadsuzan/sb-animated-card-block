@@ -1,5 +1,6 @@
 import { createRoot } from 'react-dom/client'
 import Card from '../components/common/Card';
+import Style from '../components/common/Style';
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -13,9 +14,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
         console.log(cards);
         root.render(
-            <div>
-                <Card />
-            </div>
+            <>
+                <Style {...{ styles }} />
+
+                <div className='sb-wrapper'>
+                    {
+                        cards.map((card, idx) => {
+                            return <Card key={idx} {...{ card, options, idx, isBackend: false }} />
+                        })
+                    }
+                </div>
+
+            </>
 
 
         )

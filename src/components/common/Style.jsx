@@ -20,7 +20,8 @@ const Style = ({ styles }) => {
 	    box-shadow:  ${shapeBox.boxShadow};
 	    overflow:  ${shapeBox.overflow};
 	    width:  ${shapeBox.width};
-		border-radius:${shapeBox.borderRadius}px
+		border-radius:${shapeBox.borderRadius}px;
+		background-color:red
 }
         
         .shape-box_half {
