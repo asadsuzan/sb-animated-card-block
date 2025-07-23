@@ -58,13 +58,267 @@ const Card = ({
 
 /***/ }),
 
+/***/ "./src/components/common/Style.jsx":
+/*!*****************************************!*\
+  !*** ./src/components/common/Style.jsx ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+
+const Style = ({
+  styles
+}) => {
+  const {
+    shapeBox,
+    shapeBoxHalf,
+    shapeBoxHalfBefore,
+    shapeBoxImg,
+    bgBlack,
+    ShapeBoxHalfFigCaption,
+    ShapeBoxHalfFigCaptionShowContent,
+    cardNo,
+    cardMainTitle,
+    cardContent,
+    readMoreBtn,
+    readMoreBtnHover,
+    shapeBoxHalfAfter,
+    shapeBoxHalfBeforeHover,
+    shapeBoxHalfHoverFigCaption,
+    shapeBoxHalfHoverFigCaptionShowContent,
+    shapeBoxHalfHoverAfter
+  } = styles;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("style", {
+    dangerouslySetInnerHTML: {
+      __html: `
+        .shape-box {
+	    display: ${shapeBox.display};
+	    position:  ${shapeBox.position};
+	    z-index:  ${shapeBox.zIndex};
+	    max-width:  ${shapeBox.maxWidth};
+        height:${shapeBox.height};
+	    margin:  ${shapeBox.margin.top + " " + shapeBox.margin.right + " " + shapeBox.margin.bottom + " " + shapeBox.margin.left};
+	    box-shadow:  ${shapeBox.boxShadow};
+	    overflow:  ${shapeBox.overflow};
+	    width:  ${shapeBox.width};
+}
+        
+        .shape-box_half {
+	        overflow: ${shapeBoxHalf.overflow};
+	        text-align: ${shapeBoxHalf.textAlign};
+                
+        }
+
+        
+ 
+    .shape-box_half:before {
+	        content: "";
+	        position: ${shapeBoxHalfBefore.position};
+	        top: ${shapeBoxHalfBefore.top};
+	        left: ${shapeBoxHalfBefore.left};
+	        right: ${shapeBoxHalfBefore.right};
+	        bottom: ${shapeBoxHalfBefore.bottom};
+	        transform: ${shapeBoxHalfBefore.transform};
+	        transform-origin:${shapeBoxHalfBefore.transformOrigin};
+	        transition:${shapeBoxHalfBefore.transition};
+	        background: ${shapeBoxHalfBefore.background};
+	        z-index: ${shapeBoxHalfBefore.zIndex};
+}
+        
+        
+    .shape-box>img {
+	        width: ${shapeBoxImg.width};
+	        height:${shapeBoxImg.height};
+	        -o-object-fit: ${shapeBoxImg.oObjectFit};
+	        object-fit: ${shapeBoxImg.objectFit};
+}
+        
+       .bg-black {
+	        background-color: ${bgBlack.bgColor};
+    } 
+        
+        
+        .shape-box_half figcaption {
+	        position: ${ShapeBoxHalfFigCaption.position};
+	        left: ${ShapeBoxHalfFigCaption.left};
+	        right: ${ShapeBoxHalfFigCaption.right};
+	        bottom: ${ShapeBoxHalfFigCaption.bottom};
+            padding: ${ShapeBoxHalfFigCaption.padding.top + " " + ShapeBoxHalfFigCaption.padding.right + " " + ShapeBoxHalfFigCaption.padding.bottom + " " + ShapeBoxHalfFigCaption.padding.left};
+	        transition: ${ShapeBoxHalfFigCaption.transition};
+	        transform:${ShapeBoxHalfFigCaption.transform};
+	        z-index: ${ShapeBoxHalfFigCaption.zIndex};
+}
+        
+        .shape-box_half figcaption .show-cont {
+	        position: ${ShapeBoxHalfFigCaptionShowContent.position};
+	        bottom: ${ShapeBoxHalfFigCaptionShowContent.bottom};
+	        left: ${ShapeBoxHalfFigCaptionShowContent.left};
+	        right: ${ShapeBoxHalfFigCaptionShowContent.right};
+	        transition: ${ShapeBoxHalfFigCaptionShowContent.transition};
+}
+       
+
+     .card-no {
+		font-size: ${cardNo.fontSize};
+		color: ${cardNo.color};
+		padding: ${cardNo.padding.top + " " + cardNo.padding.right + " " + cardNo.padding.bottom + " " + cardNo.padding.left};
+		margin: ${cardNo.margin.top + " " + cardNo.margin.right + " " + cardNo.margin.bottom + " " + cardNo.margin.left};
+}
+
+.card-main-title {
+		margin: ${cardMainTitle.margin.top + " " + cardMainTitle.margin.right + " " + cardMainTitle.margin.bottom + " " + cardMainTitle.margin.left};
+	font-weight: ${cardMainTitle.fontWeight};
+	font-size: ${cardMainTitle.fontSize};
+	text-transform: ${cardMainTitle.textTransform};
+	color: ${cardMainTitle.color};
+}
+
+
+
+    .card-content {
+	color: ${cardContent.color};
+	margin: ${cardContent.margin.top + " " + cardContent.margin.right + " " + cardContent.margin.bottom + " " + cardMainTitle.margin.left};
+	line-height: ${cardContent.lineHeight};
+	font-size: ${cardContent.fontSize};
+}
+
+
+  .read-more-btn {
+	border: ${readMoreBtn.border.width + " " + readMoreBtn.border.style + " " + readMoreBtn.border.color};
+	font-size: ${readMoreBtn.fontSize};
+	cursor: ${readMoreBtn.cursor};
+	 padding: ${readMoreBtn.padding.top + " " + readMoreBtn.padding.right + " " + readMoreBtn.padding.bottom + " " + readMoreBtn.padding.left};
+	display: ${readMoreBtn.display};
+	text-transform: ${readMoreBtn.textTransform};
+	letter-spacing: ${readMoreBtn.letterSpacing};
+	font-weight:${readMoreBtn.fontWeight};
+	position: ${readMoreBtn.position};
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition:${readMoreBtn.transition};
+	background: ${readMoreBtn.background};
+	color: ${readMoreBtn.color};
+	border-radius: ${readMoreBtn.borderRadius};
+	 margin: ${readMoreBtn.margin.top + " " + readMoreBtn.margin.right + " " + readMoreBtn.margin.bottom + " " + readMoreBtn.margin.left};
+	text-decoration: ${readMoreBtn.textDecoration};
+}
+
+         
+.read-more-btn:hover {
+	background: ${readMoreBtnHover.background};
+	color: ${readMoreBtnHover.color};
+
+}
+
+  .shape-box_half>.after {
+	position: ${shapeBoxHalfAfter.position};
+	top:${shapeBoxHalfAfter.top};
+	left: ${shapeBoxHalfAfter.left};
+	right: ${shapeBoxHalfAfter.right};
+	bottom: ${shapeBoxHalfAfter.bottom};
+	background: ${shapeBoxHalfAfter.background};
+	opacity: ${shapeBoxHalfAfter.opacity};
+	transition: ${shapeBoxHalfAfter.transition};
+}
+
+
+.shape-box_half:hover:before {
+	transform: ${shapeBoxHalfBeforeHover.transform};
+}
+.shape-box_half:hover figcaption {
+	transform: ${shapeBoxHalfHoverFigCaption.transform};
+}
+
+
+
+.shape-box_half:hover figcaption .show-cont {
+	bottom: ${shapeBoxHalfHoverFigCaptionShowContent.bottom};
+}
+
+
+.shape-box_half:hover>.after {
+	opacity: ${shapeBoxHalfHoverAfter.opacity};
+}
+
+
+
+
+        `
+    }
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Style);
+
+/***/ }),
+
+/***/ "./src/components/settings/GeneralSettings.jsx":
+/*!*****************************************************!*\
+  !*** ./src/components/settings/GeneralSettings.jsx ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const GeneralSettings = ({
+  attributes,
+  setAttributes
+}) => {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
+    children: "general"
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GeneralSettings);
+
+/***/ }),
+
+/***/ "./src/components/settings/StyleSettings.jsx":
+/*!***************************************************!*\
+  !*** ./src/components/settings/StyleSettings.jsx ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const StyleSettings = ({
+  attributes,
+  setAttributes
+}) => {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
+    group: "styles"
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (StyleSettings);
+
+/***/ }),
+
 /***/ "./src/sb-animated-card/block.json":
 /*!*****************************************!*\
   !*** ./src/sb-animated-card/block.json ***!
   \*****************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/sb-animated-card","version":"0.1.0","title":"animated card block","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false,"align":["center","full","left","right","wide"]},"attributes":{"cards":{"type":"array","default":[{"imgUrl":"https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80","cardNo":1,"mainTitle":"Design","content":"Customer interactions, study and analysis of company branding through creative briefs. Creation of mock-up designs by using UI tools that simulate actions and pre-visualize the reactions.","link":{"txt":"Read More","href":"#","target":"_self"}}]},"styles":{"type":"object","default":{"shapeBox":{"display":"inline-block","position":"relative","zIndex":1,"maxWidth":"500px","height":"430px","margin":{"top":"30px","bottom":"30px","left":"10px","right":"10px"},"boxShadow":" 0 6px 30px 0 rgba(0,0,0, .12)","overflow":"hidden","width":"23.333%"},"shapeBoxHalf":{"overflow":"hidden","textAlign":"left"},"shapeBoxHalfBefore":{"content":"","position":"absolute","top":0,"left":0,"right":0,"bottom":0,"transform":"skewY(53.5deg)","transformOrigin":"top left","transition":"\\transform .4s","background":"#fff","zIndex":1},"shapeBoxImg":{"width":"100%","height":"100%","oObjectFit":"cover","objectFit":"cover"},"bgBlack":{"bgColor":"#000"},"ShapeBoxHalfFigCaption":{"position":"absolute","left":0,"right":0,"bottom":0,"padding":{"top":"0","bottom":"30px","left":"30px","right":"30px"},"transition":"\\transform .4s","transform":"translateY(100%)","zIndex":3},"ShapeBoxHalfFigCaptionShowContent":{"position":"absolute","bottom":"calc(100% + 30px)","left":"30px","right":"30px","transition":"bottom .4s"},"cardNo":{"fontSize":"36px","color":"#ffc107","padding":{"top":"0","bottom":"0","left":"0","right":"0"},"margin":{"top":"10px","bottom":"10px","left":"0","right":"0"}},"cardMainTitle":{"margin":{"top":"8px","bottom":"0","left":"0","right":"0"},"fontWeight":"700","fontSize":"24px","textTransform":"uppercase","color":"#292b2c"},"cardContent":{"color":"#9f9f9f","margin":{"top":"20px","bottom":"0","left":"0","right":"0"},"lineHeight":"22px","fontSize":"15px"},"readMoreBtn":{"border":{"width":"2px","color":"#db3236","style":"solid"},"fontSize":"14px","cursor":"pointer","padding":{"top":"10px","bottom":"10px","left":"20px","right":"20px"},"display":"inline-block","textTransform":"uppercase","letterSpacing":".08em","fontWeight":"600","position":"relative","-webkit-transition":"all 0.3s","-moz-transition":"all 0.3s","transition":"all 0.3s","background":"#db3236","color":"#fff","borderRadius":"2px","margin":{"top":"25px","bottom":"0","left":"0","right":"0"},"textDecoration":"none"},"readMoreBtnHover":{"background":"transparent","color":"#db3236"},"shapeBoxHalfAfter":{"position":"absolute","top":0,"left":0,"right":0,"bottom":0,"background":"#fdd744","opacity":0,"transition":"opacity .4s;"},"shapeBoxHalfBeforeHover":{"transform":"skewY(20deg)"},"shapeBoxHalfHoverFigCaption":{"transform":"translateY(0)"},"shapeBoxHalfHoverFigCaptionShowContent":{"bottom":"100%"},"shapeBoxHalfHoverAfter":{"opacity":"1"}}},"options":{"type":"object","default":{}}},"textdomain":"sb-animated-card","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/sb-animated-card","version":"0.1.0","title":"animated card block","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false,"align":["center","full","left","right","wide"]},"attributes":{"cards":{"type":"array","default":[{"imgUrl":"https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80","cardNo":"01","mainTitle":"Design","content":"Customer interactions, study and analysis of company branding through creative briefs. Creation of mock-up designs by using UI tools that simulate actions and pre-visualize the reactions.","link":{"txt":"Read More","href":"#","target":"_self"}}]},"styles":{"type":"object","default":{"shapeBox":{"display":"inline-block","position":"relative","zIndex":1,"maxWidth":"500px","height":"430px","margin":{"top":"30px","bottom":"30px","left":"10px","right":"10px"},"boxShadow":" 0 6px 30px 0 rgba(0,0,0, .12)","overflow":"hidden","width":"23.333%"},"shapeBoxHalf":{"overflow":"hidden","textAlign":"left"},"shapeBoxHalfBefore":{"content":"","position":"absolute","top":0,"left":0,"right":0,"bottom":0,"transform":"skewY(53.5deg)","transformOrigin":"top left","transition":"transform .4s","background":"#fff","zIndex":1},"shapeBoxImg":{"width":"100%","height":"100%","oObjectFit":"cover","objectFit":"cover"},"bgBlack":{"bgColor":"#000"},"ShapeBoxHalfFigCaption":{"position":"absolute","left":0,"right":0,"bottom":0,"padding":{"top":"0","bottom":"30px","left":"30px","right":"30px"},"transition":"transform .4s","transform":"translateY(100%)","zIndex":3},"ShapeBoxHalfFigCaptionShowContent":{"position":"absolute","bottom":"calc(100% + 30px)","left":"30px","right":"30px","transition":"bottom .4s"},"cardNo":{"fontSize":"36px","color":"#ffc107","padding":{"top":"0","bottom":"0","left":"0","right":"0"},"margin":{"top":"10px","bottom":"10px","left":"0","right":"0"}},"cardMainTitle":{"margin":{"top":"8px","bottom":"0","left":"0","right":"0"},"fontWeight":"700","fontSize":"24px","textTransform":"uppercase","color":"#292b2c"},"cardContent":{"color":"#9f9f9f","margin":{"top":"20px","bottom":"0","left":"0","right":"0"},"lineHeight":"22px","fontSize":"15px"},"readMoreBtn":{"border":{"width":"2px","color":"#db3236","style":"solid"},"fontSize":"14px","cursor":"pointer","padding":{"top":"10px","bottom":"10px","left":"20px","right":"20px"},"display":"inline-block","textTransform":"uppercase","letterSpacing":".08em","fontWeight":"600","position":"relative","-webkit-transition":"all 0.3s","-moz-transition":"all 0.3s","transition":"all 0.3s","background":"#db3236","color":"#fff","borderRadius":"2px","margin":{"top":"25px","bottom":"0","left":"0","right":"0"},"textDecoration":"none"},"readMoreBtnHover":{"background":"transparent","color":"#db3236"},"shapeBoxHalfAfter":{"position":"absolute","top":0,"left":0,"right":0,"bottom":0,"background":"#fdd744","opacity":0,"transition":"opacity .4s;"},"shapeBoxHalfBeforeHover":{"transform":"skewY(20deg)"},"shapeBoxHalfHoverFigCaption":{"transform":"translateY(0)"},"shapeBoxHalfHoverFigCaptionShowContent":{"bottom":"100%"},"shapeBoxHalfHoverAfter":{"opacity":"1"}}},"options":{"type":"object","default":{}}},"textdomain":"sb-animated-card","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
 
 /***/ }),
 
@@ -84,8 +338,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editor.scss */ "./src/sb-animated-card/editor.scss");
 /* harmony import */ var _components_common_Card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/common/Card */ "./src/components/common/Card.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _components_settings_StyleSettings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/settings/StyleSettings */ "./src/components/settings/StyleSettings.jsx");
+/* harmony import */ var _components_settings_GeneralSettings__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/settings/GeneralSettings */ "./src/components/settings/GeneralSettings.jsx");
+/* harmony import */ var _components_common_Style__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/common/Style */ "./src/components/common/Style.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__);
+
+
+
 
 
 
@@ -96,15 +356,26 @@ function Edit({
   setAttributes
 }) {
   const {
-    cards
+    cards,
+    styles
   } = attributes;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(),
-    children: cards.map((card, idx) => {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_common_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        card
-      }, idx);
-    })
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_settings_StyleSettings__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      attributes,
+      setAttributes
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_settings_GeneralSettings__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      attributes,
+      setAttributes
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+      ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_common_Style__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        styles
+      }), cards.map((card, idx) => {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_common_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          card
+        }, idx);
+      })]
+    })]
   });
 }
 
