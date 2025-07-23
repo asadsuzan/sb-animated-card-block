@@ -9,7 +9,8 @@ import {
 	FontSizePicker,
 	SelectControl, BorderControl,
 	Button,
-	TextControl
+	TextControl,
+	TextareaControl
 
 } from '@wordpress/components';
 import { produce } from 'immer'
@@ -81,9 +82,36 @@ export default function Edit({ attributes, setAttributes }) {
 
 	// handle img upload 
 	const handleImgUpload = (mediaUrl) => {
+
 		setAttributes(produce(attributes, draft => {
 			draft.cards[options.selectedCardIdx].imgUrl = mediaUrl
 		}))
+
+	}
+
+	//  handle Heading change 
+	const handleHeadingChange = (newHeading) => {
+
+		setAttributes(produce(attributes, draft => {
+			draft.cards[options.selectedCardIdx].cardNo = newHeading
+		}))
+
+	}
+	//  handle Sub- Heading change 
+	const handleSubHeadingChange = (newSubHeading) => {
+
+		setAttributes(produce(attributes, draft => {
+			draft.cards[options.selectedCardIdx].mainTitle = newSubHeading
+		}))
+
+	}
+	//  handle content change 
+	const handleContentChange = (content) => {
+
+		setAttributes(produce(attributes, draft => {
+			draft.cards[options.selectedCardIdx].content = content
+		}))
+
 	}
 	return (
 		<>
@@ -454,7 +482,7 @@ export default function Edit({ attributes, setAttributes }) {
 
 
 				<PanelBody title='Card Item'>
-
+					{/* media upload  */}
 					<MediaUpload
 						onSelect={(media) => {
 							handleImgUpload(media.url)
@@ -467,22 +495,28 @@ export default function Edit({ attributes, setAttributes }) {
 								alignItems: "center",
 								gap: "5px"
 							}}>
-								<img height={"50px"} width={"100px"} alt='user' src={cards[options.selectedCardIdx].imgUrl} />
+								<img height={"50px"} width={"100px"} alt='user' src={cards[options?.selectedCardIdx]?.imgUrl} />
 								<Button style={{
 									textAlign: "Center"
 								}} variant='primary' icon={"upload"} size='small' onClick={open}>
 									upload
 								</Button>
 								<span>Or</span>
-								<TextControl label="add url" value={cards[options.selectedCardIdx].imgUrl} onChange={(newUrl) => handleImgUpload(newUrl)} />
+								<TextControl label="add url" value={cards[options?.selectedCardIdx]?.imgUrl} onChange={(newUrl) => handleImgUpload(newUrl)} />
 
 							</div>
 						)}
 					/>
 
+					<TextControl label="Heading" value={cards[options.selectedCardIdx]?.cardNo} onChange={handleHeadingChange} />
+
+					<TextControl label="Sub Heading" value={cards[options.selectedCardIdx]?.mainTitle} onChange={handleSubHeadingChange} />
+
+					<TextareaControl label="content" value={cards[options.selectedCardIdx]?.content} onChange={handleContentChange} />
 
 
 
+					{/* add and remove card item  */}
 					<div style={{
 						display: "flex",
 						justifyContent: "space-between"

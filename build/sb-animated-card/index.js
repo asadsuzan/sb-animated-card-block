@@ -1676,6 +1676,25 @@ function Edit({
       draft.cards[options.selectedCardIdx].imgUrl = mediaUrl;
     }));
   };
+
+  //  handle Heading change 
+  const handleHeadingChange = newHeading => {
+    setAttributes((0,immer__WEBPACK_IMPORTED_MODULE_3__.produce)(attributes, draft => {
+      draft.cards[options.selectedCardIdx].cardNo = newHeading;
+    }));
+  };
+  //  handle Sub- Heading change 
+  const handleSubHeadingChange = newSubHeading => {
+    setAttributes((0,immer__WEBPACK_IMPORTED_MODULE_3__.produce)(attributes, draft => {
+      draft.cards[options.selectedCardIdx].mainTitle = newSubHeading;
+    }));
+  };
+  //  handle content change 
+  const handleContentChange = content => {
+    setAttributes((0,immer__WEBPACK_IMPORTED_MODULE_3__.produce)(attributes, draft => {
+      draft.cards[options.selectedCardIdx].content = content;
+    }));
+  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
       group: "styles",
@@ -1985,7 +2004,7 @@ function Edit({
               height: "50px",
               width: "100px",
               alt: "user",
-              src: cards[options.selectedCardIdx].imgUrl
+              src: cards[options?.selectedCardIdx]?.imgUrl
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
               style: {
                 textAlign: "Center"
@@ -1999,10 +2018,22 @@ function Edit({
               children: "Or"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
               label: "add url",
-              value: cards[options.selectedCardIdx].imgUrl,
+              value: cards[options?.selectedCardIdx]?.imgUrl,
               onChange: newUrl => handleImgUpload(newUrl)
             })]
           })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+          label: "Heading",
+          value: cards[options.selectedCardIdx]?.cardNo,
+          onChange: handleHeadingChange
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+          label: "Sub Heading",
+          value: cards[options.selectedCardIdx]?.mainTitle,
+          onChange: handleSubHeadingChange
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextareaControl, {
+          label: "content",
+          value: cards[options.selectedCardIdx]?.content,
+          onChange: handleContentChange
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
           style: {
             display: "flex",
