@@ -1578,6 +1578,34 @@ function Edit({
               draft.styles.shapeBox.margin = margin;
             }));
           }
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+          children: "Text Align"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Flex, {
+          align: "center",
+          gap: "8px",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FlexItem, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.AlignmentControl, {
+              value: styles?.shapeBoxHalf.textAlign,
+              onChange: align => setAttributes((0,immer__WEBPACK_IMPORTED_MODULE_3__.produce)(attributes, draft => {
+                draft.styles.shapeBoxHalf.textAlign = align;
+              }))
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FlexItem, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+              style: {
+                fontStyle: 'italic',
+                fontSize: '13px'
+              },
+              children: {
+                left: 'Left Aligned',
+                center: 'Center Aligned',
+                right: 'Right Aligned',
+                justify: 'Justified',
+                undefined: 'Default',
+                null: 'Default'
+              }[styles?.shapeBoxHalf.textAlign]
+            })
+          })]
         })]
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
