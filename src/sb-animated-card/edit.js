@@ -70,13 +70,26 @@ export default function Edit({ attributes, setAttributes }) {
 							draft.styles.shapeBox.height = height
 						}))
 					}} />
-
+					{/* border radius  */}
+					<RangeControl
+						label="Border Radius"
+						value={styles.shapeBox.borderRadius || 0}
+						min={0}
+						max={100}
+						step={1}
+						onChange={(radius) => {
+							setAttributes(produce(attributes, draft => {
+								draft.styles.shapeBox.borderRadius = radius
+							}))
+						}}
+					/>
 					{/* margin  */}
 					<BoxControl label='margin' values={styles.shapeBox.margin} onChange={(margin) => {
 						setAttributes(produce(attributes, draft => {
 							draft.styles.shapeBox.margin = margin
 						}))
 					}} />
+
 					{/* text alignment  */}
 					<p>Text Align</p>
 					<Flex align="center" gap="8px" >

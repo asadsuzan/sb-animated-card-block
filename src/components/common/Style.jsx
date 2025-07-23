@@ -13,6 +13,7 @@ const Style = ({ styles }) => {
 	    box-shadow:  ${shapeBox.boxShadow};
 	    overflow:  ${shapeBox.overflow};
 	    width:  ${shapeBox.width};
+		border-radius:${shapeBox.borderRadius}px
 }
         
         .shape-box_half {

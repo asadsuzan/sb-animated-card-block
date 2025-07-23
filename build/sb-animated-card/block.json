@@ -52,7 +52,8 @@
           },
           "boxShadow": " 0 6px 30px 0 rgba(0,0,0, .12)",
           "overflow": "hidden",
-          "width": "23.333%"
+          "width": "23.333%",
+          "borderRadius": 0
         },
         "shapeBoxHalf": {
           "overflow": "hidden",
