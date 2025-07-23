@@ -1,4 +1,5 @@
-import { InspectorControls } from '@wordpress/block-editor';
+import { InspectorControls, } from '@wordpress/block-editor';
+import { PanelBody } from '@wordpress/components';
 
 const StyleSettings = ({ attributes, setAttributes }) => {
 
