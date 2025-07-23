@@ -143,8 +143,9 @@ return array(
 							'left' => '0',
 							'right' => '0'
 						),
-						'lineHeight' => '22px',
-						'fontSize' => '15px'
+						'lineHeight' => 1.5,
+						'fontSize' => '15px',
+						'textTransform' => 'none'
 					),
 					'readMoreBtn' => array(
 						'border' => array(

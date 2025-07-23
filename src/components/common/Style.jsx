@@ -92,6 +92,7 @@ const Style = ({ styles }) => {
 	margin: ${cardContent.margin.top + " " + cardContent.margin.right + " " + cardContent.margin.bottom + " " + cardMainTitle.margin.left};
 	line-height: ${cardContent.lineHeight};
 	font-size: ${cardContent.fontSize};
+	text-transform:${cardContent.textTransform}
 }
 
 

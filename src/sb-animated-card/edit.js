@@ -5,7 +5,9 @@ import { InspectorControls, useBlockProps, AlignmentControl, PanelColorSettings 
 import {
 	PanelBody, __experimentalUnitControl as UnitControl,
 	__experimentalBoxControl as BoxControl, Flex, FlexItem,
-	RangeControl
+	RangeControl,
+	FontSizePicker,
+	SelectControl
 
 } from '@wordpress/components';
 import { produce } from 'immer'
@@ -20,6 +22,33 @@ import Style from '../components/common/Style';
 
 export default function Edit({ attributes, setAttributes }) {
 	const { cards, styles } = attributes
+
+	const FONT_SIZES = [
+		{ name: __('Small'), slug: 'small', size: 12 },
+		{ name: __('Normal'), slug: 'normal', size: 16 },
+		{ name: __('Medium'), slug: 'medium', size: 20 },
+		{ name: __('Large'), slug: 'large', size: 24 },
+		{ name: __('Extra Large'), slug: 'x-large', size: 32 },
+		{ name: __('Huge'), slug: 'huge', size: 48 },
+	];
+	const FONT_WEIGHTS = [
+		{ label: 'Default', value: '' },
+		{ label: 'Thin (100)', value: '100' },
+		{ label: 'Extra Light (200)', value: '200' },
+		{ label: 'Light (300)', value: '300' },
+		{ label: 'Normal (400)', value: '400' },
+		{ label: 'Medium (500)', value: '500' },
+		{ label: 'Semi Bold (600)', value: '600' },
+		{ label: 'Bold (700)', value: '700' },
+		{ label: 'Extra Bold (800)', value: '800' },
+		{ label: 'Black (900)', value: '900' },
+	]
+	const TEXT_TRANSFORMS = [
+		{ label: 'None', value: 'none' },
+		{ label: 'Uppercase', value: 'uppercase' },
+		{ label: 'Lowercase', value: 'lowercase' },
+		{ label: 'Capitalize', value: 'capitalize' },
+	]
 	return (
 		<>
 			{/* <StyleSettings {...{ attributes, setAttributes }} />
@@ -95,6 +124,129 @@ export default function Edit({ attributes, setAttributes }) {
 						]}
 					/>
 
+
+				</PanelBody>
+
+				<PanelBody title='Typography'>
+					<PanelBody title='Heading'>
+						{/* font size  */}
+						<FontSizePicker fontSizes={FONT_SIZES}
+
+							value={styles.cardNo.fontSize}
+
+							onChange={(size) => setAttributes(produce(attributes, draft => {
+								draft.styles.cardNo.fontSize = size
+							}))}
+
+						/>
+						{/* text color  */}
+
+						<PanelColorSettings
+
+							initialOpen={false}
+							colorSettings={[
+								{
+									value: styles.cardNo.color,
+									onChange: (color) => setAttributes(produce(attributes, draft => {
+										draft.styles.cardNo.color = color
+									})),
+									label: 'Text Color',
+								},
+							]}
+						/>
+
+
+					</PanelBody>
+					<PanelBody title='Sub Heading'>
+						{/* font size  */}
+						<FontSizePicker fontSizes={FONT_SIZES}
+
+							value={styles.cardMainTitle.fontSize}
+
+							onChange={(size) => setAttributes(produce(attributes, draft => {
+								draft.styles.cardMainTitle.fontSize = size
+							}))}
+
+						/>
+						{/* text color  */}
+
+						<PanelColorSettings
+
+							initialOpen={false}
+							colorSettings={[
+								{
+									value: styles.cardMainTitle.color,
+									onChange: (color) => setAttributes(produce(attributes, draft => {
+										draft.styles.cardMainTitle.color = color
+									})),
+									label: 'Text Color',
+								},
+							]}
+						/>
+
+						<SelectControl
+							label="Text Transform"
+							value={styles.cardMainTitle.textTransform || 'none'}
+							options={TEXT_TRANSFORMS}
+							onChange={(value) => setAttributes(produce(attributes, draft => {
+								draft.styles.cardMainTitle.textTransform = value
+							}))}
+						/>
+						<SelectControl
+							label="Font Weight"
+							value={styles.cardMainTitle.fontWeight || 'normal'}
+							options={FONT_WEIGHTS}
+							onChange={(value) => setAttributes(produce(attributes, draft => {
+								draft.styles.cardMainTitle.fontWeight = value
+							}))}
+						/>
+					</PanelBody>
+					<PanelBody title='Content'>
+						{/* font size  */}
+						<FontSizePicker fontSizes={FONT_SIZES}
+
+							value={styles.cardContent.fontSize}
+
+							onChange={(size) => setAttributes(produce(attributes, draft => {
+								draft.styles.cardContent.fontSize = size
+							}))}
+
+						/>
+						{/* text color  */}
+
+						<PanelColorSettings
+
+							initialOpen={false}
+							colorSettings={[
+								{
+									value: styles.cardContent.color,
+									onChange: (color) => setAttributes(produce(attributes, draft => {
+										draft.styles.cardContent.color = color
+									})),
+									label: 'Text Color',
+								},
+							]}
+						/>
+						<RangeControl
+							label="Line Height"
+							value={styles.cardContent.lineHeight || 1.6}
+							min={1}
+							max={3}
+							step={0.1}
+							onChange={(lineHeight) => setAttributes(produce(attributes, draft => {
+								draft.styles.cardContent.lineHeight = lineHeight
+							}))}
+						/>
+
+						<SelectControl
+							label="Text Transform"
+							value={styles.cardContent.textTransform || 'none'}
+							options={TEXT_TRANSFORMS}
+							onChange={(value) => setAttributes(produce(attributes, draft => {
+								draft.styles.cardContent.textTransform = value
+							}))}
+						/>
+					</PanelBody>
 
 				</PanelBody>
 			</InspectorControls>
