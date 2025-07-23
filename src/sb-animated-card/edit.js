@@ -8,7 +8,8 @@ import {
 	RangeControl,
 	FontSizePicker,
 	SelectControl, BorderControl,
-	Button
+	Button,
+	TextControl
 
 } from '@wordpress/components';
 import { produce } from 'immer'
@@ -76,6 +77,13 @@ export default function Edit({ attributes, setAttributes }) {
 				draft.cards.splice(options.selectedCardIdx, 1)
 			}))
 		}
+	}
+
+	// handle img upload 
+	const handleImgUpload = (mediaUrl) => {
+		setAttributes(produce(attributes, draft => {
+			draft.cards[options.selectedCardIdx].imgUrl = mediaUrl
+		}))
 	}
 	return (
 		<>
@@ -444,10 +452,12 @@ export default function Edit({ attributes, setAttributes }) {
 					/>
 				</PanelBody>
 
-				{/* <PanelBody title="Image" initialOpen={false}>
+
+				<PanelBody title='Card Item'>
+
 					<MediaUpload
 						onSelect={(media) => {
-							handleAvatarUrl(media.url)
+							handleImgUpload(media.url)
 						}}
 						multiple={false}
 						render={({ open }) => (
@@ -457,20 +467,22 @@ export default function Edit({ attributes, setAttributes }) {
 								alignItems: "center",
 								gap: "5px"
 							}}>
-								<img height={"50px"} width={"100px"} alt='user' src={profile.imgUrl} />
+								<img height={"50px"} width={"100px"} alt='user' src={cards[options.selectedCardIdx].imgUrl} />
 								<Button style={{
 									textAlign: "Center"
 								}} variant='primary' icon={"upload"} size='small' onClick={open}>
 									upload
 								</Button>
 								<span>Or</span>
-								<TextControl label="add url" value={profile?.imgUrl} onChange={(newUrl) => handleAvatarUrl(newUrl)} />
+								<TextControl label="add url" value={cards[options.selectedCardIdx].imgUrl} onChange={(newUrl) => handleImgUpload(newUrl)} />
 
 							</div>
 						)}
 					/>
-				</PanelBody> */}
-				<PanelBody title='Card Item'>
+
+
+
+
 					<div style={{
 						display: "flex",
 						justifyContent: "space-between"
