@@ -10,7 +10,8 @@ import {
 	SelectControl, BorderControl,
 	Button,
 	TextControl,
-	TextareaControl
+	TextareaControl,
+	FocalPointPicker
 
 } from '@wordpress/components';
 import { produce } from 'immer'
@@ -19,13 +20,26 @@ import Card from '../components/common/Card';
 // import StyleSettings from '../components/settings/StyleSettings';
 // import GeneralSettings from '../components/settings/GeneralSettings';
 import Style from '../components/common/Style';
+import { useState } from 'react';
 
 
 
 
 export default function Edit({ attributes, setAttributes }) {
+	const [focalPoint, setFocalPoint] = useState({
+		x: 0.5,
+		y: 0.5,
+	});
+
 	const { cards, styles, options } = attributes
-	console.log(options);
+	const url = cards[options?.selectedCardIdx].imgUrl;
+	/* Example function to render the CSS styles based on Focal Point Picker value */
+	const style = {
+		backgroundImage: `url(${cards[options?.selectedCardIdx]?.imgUrl})`,
+		backgroundPosition: `${focalPoint.x * 100}% ${focalPoint.y * 100}%`,
+		height: "100%", width: "100%",
+		backgroundSize: "cover"
+	};
 	const FONT_SIZES = [
 		{ name: __('Small'), slug: 'small', size: 12 },
 		{ name: __('Normal'), slug: 'normal', size: 16 },
@@ -483,6 +497,14 @@ export default function Edit({ attributes, setAttributes }) {
 				</PanelBody>
 			</InspectorControls>
 			<InspectorControls >
+
+
+
+
+
+
+
+
 				{/* grid settings  */}
 				<PanelBody title="Grid Settings" initialOpen={false}>
 					<RangeControl
@@ -498,7 +520,14 @@ export default function Edit({ attributes, setAttributes }) {
 					/>
 				</PanelBody>
 
-
+				<FocalPointPicker
+					__nextHasNoMarginBottom
+					url={url}
+					value={focalPoint}
+					onDragStart={setFocalPoint}
+					onDrag={setFocalPoint}
+					onChange={setFocalPoint}
+				/>
 				<PanelBody title='Card Item'>
 					{/* media upload  */}
 					<MediaUpload
@@ -571,7 +600,7 @@ export default function Edit({ attributes, setAttributes }) {
 				<div className='sb-wrapper'>
 					{
 						cards.map((card, idx) => {
-							return <Card key={idx} {...{ card, options, attributes, setAttributes, idx, isBackend: true }} />
+							return <Card key={idx} {...{ card, options, attributes, setAttributes, idx, isBackend: true, style }} />
 						})
 					}
 				</div>

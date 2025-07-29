@@ -1,5 +1,5 @@
 import { produce } from 'immer'
-const Card = ({ card, isBackend = false, options, setAttributes, attributes, idx }) => {
+const Card = ({ card, isBackend = false, options, setAttributes, attributes, idx, style }) => {
 
     const { selectedCardIdx } = options || {}
 
@@ -17,9 +17,12 @@ const Card = ({ card, isBackend = false, options, setAttributes, attributes, idx
 
     return <>
 
-        <div className="box-wrapper" onClick={handleSelectedCard}>
+        <div className="box-wrapper" onClick={handleSelectedCard} >
             <figure className="shape-box shape-box_half" >
-                <img src={card?.imgUrl} alt="card image" />
+                {/* <img src={card?.imgUrl} alt="card image" /> */}
+                <div style={style}>
+
+                </div>
                 <div className="brk-abs-overlay z-index-0 bg-black opacity-60"></div>
                 <figcaption>
                     <div className="show-cont">
